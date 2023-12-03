@@ -101,6 +101,10 @@ class PandaEnv(gym.Env):
     def reset(self):
         self.step_counter = 0
         self.cost_counter = 1
+        try:
+            p.disconnect()
+        except Exception as e:
+            print("Initial condition !!! Not connected to any Renderer")
         p.connect(MODE) # for testing learned policy must be p.GUI!
         p.resetSimulation()
         p.resetDebugVisualizerCamera(cameraDistance=1.5, cameraYaw=0, cameraPitch=-40, cameraTargetPosition=[0.55,-0.35,0.2])

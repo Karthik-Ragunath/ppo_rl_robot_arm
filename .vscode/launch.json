@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/run_training.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":[
+            ]
+        },
+        {
+            "name": "test",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_policy.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":[
+                "exp-results/2023-12-02_17-30_ppo_action1-EpLen500-spe1000-tip.robot"
+            ]
+        }
+    ]
+}
