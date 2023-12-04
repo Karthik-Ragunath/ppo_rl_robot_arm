@@ -143,7 +143,7 @@ class PandaEnv(gym.Env):
         self.objectUid = p.loadURDF(os.path.join(urdfRootPath, "lego/lego.urdf"), basePosition=state_object)
         # state_object = p.getBasePositionAndOrientation(self.objectUid)[0]
     
-        state_object_red = (random.uniform(0.3,0.5), random.uniform(-0.2,0.2), 0.05)  # adjust position as needed
+        state_object_red = (random.uniform(0.6,0.8), random.uniform(-0.2,0.2), 0.05)  # adjust position as needed
         self.objectUid_red = p.loadURDF(os.path.join(urdfRootPath, "lego/lego_red.urdf"), basePosition=state_object_red)
         # state_object_red = p.getBasePositionAndOrientation(self.objectUid_red)[0]
 

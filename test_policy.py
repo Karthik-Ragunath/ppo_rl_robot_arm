@@ -30,7 +30,7 @@ def run_policy(env, get_action, max_ep_len=None, num_episodes=100, render=True, 
         if d or (ep_len == max_ep_len):
             logger.store(EpRet=ep_ret, EpCost=ep_cost, EpLen=ep_len)
             print('Episode %d \t EpRet %.3f \t EpCost %.3f \t EpLen %d'%(n, ep_ret, ep_cost, ep_len))
-            o, r, d, ep_ret, ep_cost, ep_len = env.reset(), 0, False, 0, 0, 0
+            o, r, d, ep_ret, ep_cost, ep_len = env.reset(color_query=color_query), 0, False, 0, 0, 0
             n += 1
 
     logger.log_tabular('EpRet', with_min_and_max=True)
