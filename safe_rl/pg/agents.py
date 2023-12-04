@@ -116,7 +116,7 @@ class PPOAgent(Agent):
             clipped_adv=True,
             first_order=True,
             constrained=False
-            ))
+        ))
 
     def update_pi(self, inputs):
 
