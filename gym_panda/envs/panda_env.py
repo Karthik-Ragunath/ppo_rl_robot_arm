@@ -87,7 +87,8 @@ class PandaEnv(gym.Env):
         
         # Detect Collisions of Panda and Obstacle
         cost = 0
-        contacts = p.getContactPoints(self.pandaUid, self.obstacle1)
+        # contacts = p.getContactPoints(self.pandaUid, self.obstacle1)
+        contacts = False
         if contacts:
             print("Collision detected! ", "[", self.cost_counter, "]", end="\r")
             self.cost_counter += 1
@@ -146,8 +147,8 @@ class PandaEnv(gym.Env):
         #state_obstacle1 = (random.uniform(0.3,0.9),random.uniform(-0.3, 0.3),0.05)
         
         # OPTION 1: obstacle in front of the target object
-        state_obstacle1 = (state_object[0]-0.2, state_object[1],0.05)
-        self.obstacle1 = p.loadURDF("gym_panda/envs/cylinder.urdf", basePosition=state_obstacle1)
+        # state_obstacle1 = (state_object[0]-0.2, state_object[1],0.05)
+        # self.obstacle1 = p.loadURDF("gym_panda/envs/cylinder.urdf", basePosition=state_obstacle1)
         
         # OPTION 2: generate X number of obstacles in random positions
         # for i in range(3):
