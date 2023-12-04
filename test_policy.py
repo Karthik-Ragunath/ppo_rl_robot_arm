@@ -7,14 +7,14 @@ from safe_rl.utils.logx import EpochLogger
 
 
 
-def run_policy(env, get_action, max_ep_len=None, num_episodes=100, render=True):
+def run_policy(env, get_action, max_ep_len=None, num_episodes=100, render=True, color_query=None):
 
     assert env is not None, \
         "Environment not found!\n\n It looks like the environment wasn't saved, " + \
         "and we can't run the agent in it. :("
 
     logger = EpochLogger()
-    o, r, d, ep_ret, ep_cost, ep_len, n = env.reset(), 0, False, 0, 0, 0, 0
+    o, r, d, ep_ret, ep_cost, ep_len, n = env.reset(color_query=color_query), 0, False, 0, 0, 0, 0
     while n < num_episodes:
         if render:
             env.render()
@@ -48,8 +48,9 @@ if __name__ == '__main__':
     parser.add_argument('--norender', '-nr', action='store_true')
     parser.add_argument('--itr', '-i', type=int, default=-1)
     parser.add_argument('--deterministic', '-d', action='store_true')
+    parser.add_argument('--color_query', '-c', type=str, help="describe the color of the object to pick", required=True)
     args = parser.parse_args()
     env, get_action, sess = load_policy(args.fpath,
                                         args.itr if args.itr >=0 else 'last',
                                         args.deterministic)
-    run_policy(env, get_action, args.len, args.episodes, not(args.norender))
+    run_policy(env, get_action, args.len, args.episodes, not(args.norender), color_query=args.color_query)

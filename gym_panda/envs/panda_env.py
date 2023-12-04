@@ -25,6 +25,7 @@ class PandaEnv(gym.Env):
         p.resetDebugVisualizerCamera(cameraDistance=1.5, cameraYaw=0, cameraPitch=-40, cameraTargetPosition=[0.55,-0.35,0.2])
         self.action_space = spaces.Box(np.array([-1]*DIM_ACT), np.array([1]*DIM_ACT))
         self.observation_space = spaces.Box(np.array([-1]*DIM_OBS), np.array([1]*DIM_OBS))
+        self.color_query = None
 
     def step(self, action):
         p.configureDebugVisualizer(p.COV_ENABLE_SINGLE_STEP_RENDERING)
@@ -65,7 +66,11 @@ class PandaEnv(gym.Env):
         #=========================================================================#
         #  Reward Function and Episode End States                                 #
         #=========================================================================#
-        state_object, _ = p.getBasePositionAndOrientation(self.objectUid)
+        if self.color_query == 'yellow':
+            state_object, _ = p.getBasePositionAndOrientation(self.objectUid)
+        else:
+            state_object, _ = p.getBasePositionAndOrientation(self.objectUid_red)
+        # state_object, _ = p.getBasePositionAndOrientation(self.objectUid)
         state_robot = p.getLinkState(self.pandaUid, 11)[0]
         state_fingers = (p.getJointState(self.pandaUid,9)[0], p.getJointState(self.pandaUid, 10)[0])
         tip_state = p.getLinkState(self.pandaUid, 10)[0] #p.getJointState(self.pandaUid, 10)
@@ -99,7 +104,8 @@ class PandaEnv(gym.Env):
         self.observation = state_robot + state_fingers + state_object # + state_robot
         return np.array(self.observation).astype(np.float32), reward, done, info
 
-    def reset(self):
+    def reset(self, color_query='yellow'):
+        self.color_query = color_query
         self.step_counter = 0
         self.cost_counter = 1
         try:
@@ -135,11 +141,18 @@ class PandaEnv(gym.Env):
         # target object
         state_object= (random.uniform(0.6,0.8),random.uniform(-0.2,0.2),0.05)
         self.objectUid = p.loadURDF(os.path.join(urdfRootPath, "lego/lego.urdf"), basePosition=state_object)
-        state_object = p.getBasePositionAndOrientation(self.objectUid)[0]
+        # state_object = p.getBasePositionAndOrientation(self.objectUid)[0]
     
         state_object_red = (random.uniform(0.3,0.5), random.uniform(-0.2,0.2), 0.05)  # adjust position as needed
         self.objectUid_red = p.loadURDF(os.path.join(urdfRootPath, "lego/lego_red.urdf"), basePosition=state_object_red)
         # state_object_red = p.getBasePositionAndOrientation(self.objectUid_red)[0]
+
+        if self.color_query == 'yellow':
+            state_object = p.getBasePositionAndOrientation(self.objectUid)[0]
+        else:
+            state_object = p.getBasePositionAndOrientation(self.objectUid_red)[0]
+
+
 
         #=========================================================================#
         #  Generate obstacles                                                     #
