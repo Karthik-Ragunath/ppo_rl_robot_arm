@@ -339,7 +339,8 @@ def run_polopt_agent(env_fn,
     #=========================================================================#
 
     start_time = time.time()
-    o, r, d, c, ep_ret, ep_cost, ep_len = env.reset(), 0, False, 0, 0, 0, 0
+    color_query = "yellow"
+    o, r, d, c, ep_ret, ep_cost, ep_len = env.reset(color_query=color_query), 0, False, 0, 0, 0, 0
     cur_penalty = 0
     cum_cost = 0
 
@@ -410,7 +411,11 @@ def run_polopt_agent(env_fn,
                     print('Warning: trajectory cut off by epoch at %d steps.'%ep_len)
 
                 # Reset environment
-                o, r, d, c, ep_ret, ep_len, ep_cost = env.reset(), 0, False, 0, 0, 0, 0
+                if color_query == "yellow":
+                    color_query = "red"
+                else:
+                    color_query = "yellow"
+                o, r, d, c, ep_ret, ep_len, ep_cost = env.reset(color_query=color_query), 0, False, 0, 0, 0, 0
 
         # Save model
         if (epoch % save_freq == 0) or (epoch == epochs-1):
