@@ -22,8 +22,9 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args":[
-                "exp-results/2023-12-02_17-30_ppo_action1-EpLen500-spe1000-tip.robot",
-                "--color_query", "red"
+                // "exp-results/2023-12-02_17-30_ppo_action1-EpLen500-spe1000-tip.robot",
+                "exp-results/2023-12-13_16-28_ppo_action1-EpLen500-spe1000-tip.robot",
+                "--color_query", "yellow"
             ]
         }
     ]
