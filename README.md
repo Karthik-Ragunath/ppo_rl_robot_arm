@@ -147,7 +147,7 @@ Refer - `.vscode/launch.json` file provided in the submission
 
 # ACCESSING TRAINED MODEL
 
-Google drive links to access deep RL PPO models trained for:
+## Google drive links to access deep RL PPO models trained for:
 
 Model trained for 200 epochs:
 `https://drive.google.com/drive/folders/13BOfEOn091ONanR3PrB69VU6S99YY2U_?usp=sharing`
@@ -155,9 +155,17 @@ Model trained for 200 epochs:
 Model trained for 500 epochs:
 `https://drive.google.com/drive/folders/1D1g9fhhtKYUOJkOjI11vy2LSNn5Ok3kz?usp=sharing`
 
+## Trained models are also available inside the code directory - exp_results
+
+200 epochs:
+`exp-results/2023-12-02_17-30_ppo_action1-EpLen500-spe1000-tip.robot`
+
+500 epochs:
+`exp-results/2023-12-13_16-28_ppo_action1-EpLen500-spe1000-tip.robot`
+
 --------------------------------
 
-# DEMO Videos
+# INFERENCE DEMO VIDEOS - YouTube
 
 We uploaded our inference demo videos to youtube (unlisted) for easier access
 
@@ -175,5 +183,24 @@ Epoch 500: Reaching Red Cube
 
 Epoch 500: Reaching Yellow Cube
 `https://youtu.be/09_mjudmEZw`
+
+## INFERENCE DEMO VIDEOS - present in submission folder
+
+We have also enclosed a copy those demo videos in inference_demo_videos directory inside our submission
+
+Faster-RCNN Working Demo:
+`inference_faster_rcnn_component.mp4`
+
+Epoch 200: Reaching Red Cube
+`inference_200_epochs_red.mp4`
+
+Epoch 200: Reaching Yellow Cube
+`inference_200_epochs_yellow.mp4`
+
+Epoch 500: Reaching Red Cube
+`inference_500_epochs_red.mp4`
+
+Epoch 500: Reaching Yellow Cube
+`inference_500_epochs_yellow.mp4`
 
 --------------------------------
