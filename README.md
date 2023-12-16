@@ -83,6 +83,8 @@ If you are using VSCode Debugger to run the training pipeline
 }
 ```
 
+Refer - `.vscode/launch.json` file provided in the submission
+
 `Parameters involved in training process - run_training.py`
 
 ```
@@ -138,6 +140,8 @@ If you are using VSCode Debugger to run the inference pipeline
     ]
 }
 ```
+
+Refer - `.vscode/launch.json` file provided in the submission
 
 --------------------------------
 
