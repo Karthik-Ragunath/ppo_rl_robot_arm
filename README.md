@@ -189,18 +189,18 @@ Epoch 500: Reaching Yellow Cube
 We have also enclosed a copy those demo videos in inference_demo_videos directory inside our submission
 
 Faster-RCNN Working Demo:
-`inference_faster_rcnn_component.mp4`
+`inference_video_demos/inference_faster_rcnn_component.mp4`
 
 Epoch 200: Reaching Red Cube
-`inference_200_epochs_red.mp4`
+`inference_video_demos/inference_200_epochs_red.mp4`
 
 Epoch 200: Reaching Yellow Cube
-`inference_200_epochs_yellow.mp4`
+`inference_video_demos/inference_200_epochs_yellow.mp4`
 
 Epoch 500: Reaching Red Cube
-`inference_500_epochs_red.mp4`
+`inference_video_demos/inference_500_epochs_red.mp4`
 
 Epoch 500: Reaching Yellow Cube
-`inference_500_epochs_yellow.mp4`
+`inference_video_demos/inference_500_epochs_yellow.mp4`
 
 --------------------------------
