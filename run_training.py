@@ -14,6 +14,6 @@ ppo(
 	ac_kwargs = dict(hidden_sizes=[64,64]),
 	logger_kwargs = dict(output_dir='exp-results/'+current_time+file_name, exp_name=(file_name)),
 	steps_per_epoch=1000, # default: 4000
-    epochs=100,
+    epochs=200,
     max_ep_len=500,
 )
