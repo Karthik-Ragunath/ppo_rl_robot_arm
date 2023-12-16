@@ -145,6 +145,35 @@ Refer - `.vscode/launch.json` file provided in the submission
 
 --------------------------------
 
+# ACCESSING TRAINED MODEL
 
+Google drive links to access deep RL PPO models trained for:
 
+Model trained for 200 epochs:
+`https://drive.google.com/drive/folders/13BOfEOn091ONanR3PrB69VU6S99YY2U_?usp=sharing`
 
+Model trained for 500 epochs:
+`https://drive.google.com/drive/folders/1D1g9fhhtKYUOJkOjI11vy2LSNn5Ok3kz?usp=sharing`
+
+--------------------------------
+
+# DEMO Videos
+
+We uploaded our inference demo videos to youtube (unlisted) for easier access
+
+Faster-RCNN Working Demo:
+`https://youtu.be/BO6FHZmbYDo`
+
+Epoch 200: Reaching Red Cube
+`https://youtu.be/51LI3-b4MFQ`
+
+Epoch 200: Reaching Yellow Cube
+`https://youtu.be/CxDWeZtJwTI`
+
+Epoch 500: Reaching Red Cube
+`https://youtu.be/2gDRGj3lxoM`
+
+Epoch 500: Reaching Yellow Cube
+`https://youtu.be/09_mjudmEZw`
+
+--------------------------------
