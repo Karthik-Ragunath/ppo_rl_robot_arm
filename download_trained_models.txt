@@ -1,0 +1,13 @@
+--------------------------------
+
+# ACCESSING TRAINED MODEL
+
+Google drive links to access deep RL PPO models trained for:
+
+Model trained for 200 epochs:
+`https://drive.google.com/drive/folders/13BOfEOn091ONanR3PrB69VU6S99YY2U_?usp=sharing`
+
+Model trained for 500 epochs:
+`https://drive.google.com/drive/folders/1D1g9fhhtKYUOJkOjI11vy2LSNn5Ok3kz?usp=sharing`
+
+--------------------------------
