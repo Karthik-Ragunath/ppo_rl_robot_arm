@@ -10,4 +10,12 @@ Model trained for 200 epochs:
 Model trained for 500 epochs:
 `https://drive.google.com/drive/folders/1D1g9fhhtKYUOJkOjI11vy2LSNn5Ok3kz?usp=sharing`
 
+## Trained models are also available inside the code directory - exp_results
+
+200 epochs:
+`exp-results/2023-12-02_17-30_ppo_action1-EpLen500-spe1000-tip.robot`
+
+500 epochs:
+`exp-results/2023-12-13_16-28_ppo_action1-EpLen500-spe1000-tip.robot`
+
 --------------------------------
